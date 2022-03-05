@@ -7,7 +7,7 @@
     "analyze": "node ./analyze.js"
   },
   "author": "seieric",
-  "license": "ISC",
+  "license": "GPLv3",
   "dependencies": {
     "mecab-async": "^0.1.2"
   }
