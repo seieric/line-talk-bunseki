@@ -18,7 +18,7 @@ LINEアプリで出力したLINEのトーク履歴を分析します。
 言語設定が日本語以外の端末やLINEで出力したデータは正しく分析できないことがあります。(Japanese environment only.)
 
 ## ダウンロードとインストール
-**動作には[Mecab](https://taku910.github.io/mecab/)（形態素分析ライブラリ）がインストールされた環境が必要です。([mecab-ipadic-NEologd ](https://github.com/neologd/mecab-ipadic-neologd)の追加インストール推奨)[*1]**
+**動作には[Mecab](https://taku910.github.io/mecab/)（形態素分析ライブラリ）がインストールされた環境が必要です。([mecab-ipadic-NEologd ](https://github.com/neologd/mecab-ipadic-neologd)の追加インストール推奨)[^1]**
 
 まず、このリポジトリをクローンしてください。
 ```bash
@@ -32,7 +32,7 @@ npm install
 ```
 これでインストールは完了です。
 
-[*1]: LINEのトーク履歴は話し言葉が多いため、Mecab以外の形態素分析ライブラリではまともな分析結果が得られませんでした。追加辞書もほぼ必須です。（もちろんなくても使えますが。）
+[^1]: LINEのトーク履歴は話し言葉が多いため、Mecab以外の形態素分析ライブラリではまともな分析結果が得られませんでした。追加辞書もほぼ必須です。（もちろんなくても使えますが。）
 ## 使い方
 引数にLINEで出力したトーク履歴のテキストファイルを渡すだけです。
 ```bash
