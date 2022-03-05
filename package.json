@@ -1,0 +1,14 @@
+{
+  "name": "line-talk-bunseki",
+  "version": "1.0.0",
+  "description": "LINEのトーク履歴を分析",
+  "main": "analyze.js",
+  "scripts": {
+    "analyze": "node ./analyze.js"
+  },
+  "author": "seieric",
+  "license": "ISC",
+  "dependencies": {
+    "mecab-async": "^0.1.2"
+  }
+}
