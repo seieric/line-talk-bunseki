@@ -19,7 +19,7 @@ const fs = require("fs");
 const readline = require("readline");
 const MeCab = new require("mecab-async");
 const mecab = new MeCab();
-mecab.command = 'mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd';
+mecab.command = process.env.LA_MECAB_COMMAND || "mecab";
 
 const infoRegExp = /^[0-9]{2}:[0-9]{2}\t\t(.*)$/; //招待や削除などの情報
 const contentRegExp = /^[0-9]{2}:[0-9]{2}\t.+\t\[(.+)\](\s\(null\))?$/; //写真や連絡先、スタンプ、アルバムなど

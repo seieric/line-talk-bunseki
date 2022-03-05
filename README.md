@@ -18,7 +18,7 @@ LINEアプリで出力したLINEのトーク履歴を分析します。
 言語設定が日本語以外の端末やLINEで出力したデータは正しく分析できないことがあります。(Japanese environment only.)
 
 ## ダウンロードとインストール
-**動作には[Mecab](https://taku910.github.io/mecab/)（形態素分析ライブラリ）がインストールされた環境が必要です。([mecab-ipadic-NEologd ](https://github.com/neologd/mecab-ipadic-neologd)の追加インストール推奨)[^1]**
+**動作には[MeCab](https://taku910.github.io/mecab/)（形態素分析ライブラリ）がインストールされた環境が必要です。([mecab-ipadic-NEologd ](https://github.com/neologd/mecab-ipadic-neologd)の追加インストール推奨)[^1]**
 
 まず、このリポジトリをクローンしてください。
 ```bash
@@ -32,12 +32,28 @@ npm install
 ```
 これでインストールは完了です。
 
-[^1]: LINEのトーク履歴は話し言葉が多いため、Mecab以外の形態素分析ライブラリではまともな分析結果が得られませんでした。追加辞書もほぼ必須です。（もちろんなくても使えますが。）
+[^1]: LINEのトーク履歴は話し言葉が多いため、MeCab以外の形態素分析ライブラリではまともな分析結果が得られませんでした。追加辞書もほぼ必須です。（もちろんなくても使えますが。）
 ## 使い方
 引数にLINEで出力したトーク履歴のテキストファイルを渡すだけです。
 ```bash
 npm run analyze /path/to/your-text-file.txt
 ```
+MeCabで既定辞書以外を使う場合やMeCabのバイナリを指定する場合は、環境変数LA_MECAB_COMMANDで指定できます。[^2]
+
+mecab-ipadic-NEologdを使用する場合：
+```bash
+LA_MECAB_COMMAND='mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd'
+export LA_MECAB_COMMAND
+```
+
+MeCabのバイナリを指定する場合：
+```bash
+LA_MECAB_COMMAND='/path/to/your/mecab/binary'
+export LA_MECAB_COMMAND
+```
+
+[^2]: 使用する辞書は[mecab-ipadic-NEologd](https://github.com/neologd/mecab-ipadic-neologd)を推奨。
+
 実行時間は、トーク履歴のサイズによります。メッセージ件数3000件程度のファイルで9秒かかりました。実行結果の例はこちら。（内容は改変しているので不整合。）
 ```
 頻出ワード
