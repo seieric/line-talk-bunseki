@@ -1,5 +1,7 @@
 # LINEトーク分析
 
+![](https://raw.githubusercontent.com/seieric/line-talk-bunseki/main/eyecatch.png "LINE Talk Analyzer")
+
 LINEアプリで出力したLINEのトーク履歴を分析します。
 
 取得可能なデータ
